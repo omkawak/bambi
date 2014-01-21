@@ -1,14 +1,18 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {
-    "express": "3.4.0",
-    "ejs": "*",
-    "express-partials": "~0.1.1",
-    "lodash": "~2.4.1"
-  }
+    "name": "bambi",
+    "subdomain": "bambi",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node app.js"
+    },
+    "engines": {
+        "node": "0.10.x"
+    },
+    "dependencies": {
+        "express": "3.4.0",
+        "ejs": "*",
+        "express-partials": "~0.1.1",
+        "lodash": "~2.4.1"
+    }
 }
