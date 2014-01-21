@@ -9,9 +9,6 @@ var post = require("cloud/system.post.js");
 var feed = require("cloud/system.feed.js");
 var me = require("cloud/system.me.js");
 
-var PRODUCTS_PER_PAGE = 20;
-var COMMENTS_PER_PAGE = 10;
-
 Parse.Cloud.define('post', post.add);
 Parse.Cloud.define('feed', feed.get);
 Parse.Cloud.define('me', me.get);
