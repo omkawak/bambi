@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="conversations">
+        <h2>Messages</h2>
+        <ul>
+            {{#conversations}}
+            <li>
+                <a href="/messages/{{id}}">
+                    <div class="conversation-image">
+                        <img src="{{user.imageUrl}}" />
+                    </div>
+                    <div class="conversation-details">
+                        <div class="conversation-user">
+                            {{user.firstName}}&nbsp;{{user.lastName}}
+                        </div>
+                        <div class="conversation-last-message">
+                            {{lastMessage.body}}
+                        </div>
+                    </div>
+                </a>
+            </li>
+            {{/conversations}}
+        </ul>
+    </div>
+    <div class="conversation">
+        <ul>
+            {{#conversation}}
+            <li>
+                <div class="message-user">
+                    <div class="user-image">
+                        <img src="{{user.imageUrl}}" />
+                    </div>
+                    <div class="user-details">
+                        <div class="user-name">{{user.firstName}}&nbsp;{{user.lastName}}</div>
+                        <div class="user-location">{{user.location}}</div>
+                    </div>
+                </div>
+                <div class="message-body">
+                    {{body}}
+                </div>
+                {{#product}}
+                <div class="product-snippet">
+                    <a href="/p/{{id}}">
+                        <div class="product-details">
+                            <div class="product-description">
+                                {{description}}
+                            </div>
+                            <div class="product-price">
+                                {{currency.symbol}} {{price}}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/product}}
+                <div class="message-date">
+                    {{date}}
+                </div>
+            </li>
+            {{/conversation}}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+#user {
+    .intro {
+        .user-image {
+            img {
+                height: 88px;
+                width: 88px;
+                border-radius: 44px;
+            }
+            margin-bottom: 10px;
+        }
+        .user-name {
+            font-size: 16px;
+        }
+        .user-actions {
+            margin-top: 20px;
+        }
+        .user-location {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .8);
+        }
+        .user-statistics {
+            margin-top: 20px;
+            .key {
+                font-size: 12px;
+                color: rgba(255, 255, 255, .8);
+            }
+            .value {
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+        @media (min-width: @screen-sm-min) {
+            .user-image {
+                float: left;
+                img {
+                    height: 120px;
+                    width: 120px;
+                    border-radius: 60px;
+                }
+            }
+            .user-details {
+                text-align: left;
+                padding-left: 140px;
+                padding-top: 10px;
+            }
+            .user-name {
+                font-size: 20px;
+            }
+            .user-location {
+                font-size: 14px;
+            }
+            .user-statistics {
+                margin-top: 40px;
+                .key {
+                    font-size: 14px;
+                }
+                .value {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

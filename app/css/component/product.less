@@ -1,0 +1,197 @@
+#product {
+    font-size: 16px;
+    .container {
+        padding-bottom: 20px;
+    }
+    .product-image {
+        width: 100%;
+        position: relative;
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    .product-informations {
+        margin-top: 15px;
+    }
+    .product-information {
+        font-size: 14px;
+        .key {
+            float: left;
+            font-weight: 600;
+            color: @colorGrey;
+            width: 75px;
+        }
+        .value {
+            padding-left: 75px;
+        }
+    }
+    .product-image-overlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, .1);
+    }
+    .product-image-col {
+        padding: 0;
+    }
+    .product-description {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+    .product-price {
+        font-size: 24px;
+        color: #16a085;
+    }
+    .user {
+        margin-top: 20px;
+        &:after {
+            content:"";
+            display: table;
+            clear: both;
+        }
+        .user-image {
+            height: 48px;
+            width: 48px;
+            float: left;
+            img {
+                height: 48px;
+                width: 48px;
+                border-radius: 24px;
+            }
+        }
+        .user-name {
+            font-weight: 600;
+            padding-top: 3px;
+        }
+        .user-location {
+            font-size: 14px;
+            color: @colorGrey;
+        }
+        .user-details {
+            padding-left: 58px;
+        }
+    }
+    .product-actions {
+        margin: 0;
+        padding: 0;
+        margin-top: 20px;
+        list-style: none;
+        li {
+            display: inline;
+            padding-right: 5px;
+        }
+        button {
+            border-radius: 20px;
+        }
+        margin-bottom: 10px;
+    }
+    .comments {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+    .comment {
+        &:after {
+            content:"";
+            display: table;
+            clear: both;
+        }
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        padding: 10px 0;
+        &:last-child {
+            border: none;
+        }
+    }
+    .comment-image {
+        float: left;
+        height: 34px;
+        width: 34px;
+        img {
+            border-radius: 17px;
+            height: 34px;
+            width: 34px;
+        }
+    }
+    .comment-body {
+        padding-left: 44px;
+    }
+    .comment-meta {
+        color: @colorGrey;
+        font-size: 12px;
+    }
+    .post-comment {
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        textarea {
+            border: none;
+            background: none;
+            margin-bottom: 20px;
+            width: 100%;
+            height: 42px;
+            outline: none;
+            resize: none;
+            font-size: 14px;
+            padding: 10px 63px 10px 45px;
+            border: 1px solid rgba(0, 0, 0, .1);
+            border-radius: 3px;
+            margin: 0;
+            -webkit-transition: border-color .3s;
+            &:focus {
+                border-color: @colorPrimary;
+            }
+        }
+        i {
+            position: absolute;
+            top: 10px;
+            left: 14px;
+            font-size: 20px;
+            color: @colorGrey;
+        }
+        textarea:focus ~ i {
+            color: @colorPrimary;
+        }
+        button {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            height: 32px;
+            width: 48px;
+        }
+    }
+    .product-statistics {
+        font-size: 12px;
+        list-style: none;
+        display: block;
+        padding: 0;
+        margin: 0;
+        margin-top: 15px;
+        color: @colorGrey;
+        li {
+            display: inline;
+            padding-right: 10px;
+        }
+    }
+    .callout-login {
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+    @media (min-width: @screen-sm-min) {
+        .product-image {
+            margin-top: 20px;
+        }
+        .product-image-overlay {
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .1);
+        }
+        .product-details-col {
+            padding-left: 30px;
+        }
+        .product-actions {
+            margin-top: 40px;
+        }
+    }
+}

@@ -1,0 +1,97 @@
+@import "lib/typo.less";
+@import "lib/mixins.less";
+@import "lib/icon.less";
+@import "lib/elements.less";
+
+@colorPrimary: #8e44ad;
+@colorBlack: #34495e;
+@colorWhite: #ecf0f1;
+@colorGrey: rgba(52, 73, 94, .6);
+@colorLightGrey: rgba(52, 73, 94, .1);
+@colorGreen: #16a085;
+
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-sm-max: 991px;
+@screen-md-min: 992px;
+@screen-md-max: 1199px;
+@screen-lg-min: 1200px;
+
+body {
+    background: #FFF;
+    color: @colorBlack;
+}
+
+a, a:hover, a:visited, a:active {
+	text-decoration: none;
+	color: @colorBlack;
+}
+
+button {
+	outline: none;
+}
+
+input, textarea {
+	color: @colorBlack;
+}
+
+.btn,.btn:hover, .btn:focus {
+	background: none;
+	&.btn-primary {
+		color: @colorPrimary;
+		border: 1px solid @colorPrimary;
+	}
+	&.btn-invert {
+		color: #FFF;
+		border: 1px solid #FFF;
+	}	
+	outline: 0;
+	outline-style:none;
+	outline-width:0;
+	border-radius: 3px;
+}
+
+::-webkit-input-placeholder {
+   color: @colorGrey;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: @colorGrey;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: @colorGrey;
+}
+
+:-ms-input-placeholder {  
+   color: @colorGrey;
+}
+
+.viewport {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+@import "component/feed.less";
+@import "component/modal.less";
+@import "component/views.less";
+@import "component/upload.less";
+
+@import "component/header.less";
+@import "component/product.less";
+@import "component/window.less";
+@import "component/intro.less";
+@import "component/user.less";
+
+// v1.0.0
+@import "component/listings.less";
+@import "component/messages.less";
+@import "component/footer.less";
+@import "component/product-snippet.less";
+@import "component/splash.less";
+@import "component/void.less";
+

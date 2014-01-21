@@ -1,0 +1,13 @@
+{
+  "name": "videdressing",
+  "version": "0.0.0",
+  "dependencies": {
+    "flight": "~1.1.0",
+    "requirejs": "~2.1.5",
+    "davis": "~0.9.8"
+  },
+  "devDependencies": {
+    "jasmine-flight": "*",
+    "jasmine-jquery": "*"
+  }
+}

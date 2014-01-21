@@ -1,0 +1,28 @@
+<div class="window-body">
+    <div class="window-header">
+        <div class="window-title"><i class="icon-tag"></i> Want</div>
+        <div class="window-close">
+            <i class="icon-remove"></i>
+        </div>
+    </div>
+    <div class="window-content">
+        <div class="product-snippet">
+            <div class="product-details">
+                <div class="product-description">
+                    {{product.description}}
+                </div>
+                <div class="product-price">
+                    {{product.currency.symbol}} {{product.price}}
+                </div>
+            </div>
+        </div>
+        <p>Please contact the seller to arrange payment and delivery of the item or request further details.</p>
+        <div class="window-form">
+            <div class="window-form-row">
+                <textarea id="window-buy-message" placeholder="Enter a message"></textarea>
+                <i class="icon-pencil"></i> 
+            </div>
+        </div>
+        <button id="window-buy-submit" class="btn btn-primary btn-block">Send a message to {{product.user.firstName}} {{product.user.lastName}}</button>
+    </div>
+</div>

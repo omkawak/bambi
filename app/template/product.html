@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1 col-sm-6 product-image-col">
+            <div class="product-image">
+                <div class="product-image-overlay"></div>
+                <img src="{{product.imageUrl}}" />
+            </div>
+        </div>
+        <div class="col-md-5 col-sm-6 product-details-col">
+            <a href="/u/{{product.user.id}}">
+                <div class="user">
+                    <div class="user-image">
+                        <img src="{{product.user.imageUrl}}" />
+                    </div>
+                    <div class="user-details">
+                        <div class="user-name">
+                            {{product.user.firstName}}&nbsp;{{product.user.lastName}}
+                        </div>
+                        <div class="user-location">
+                            <i class="icon-map-marker"></i> {{product.user.location}}
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="product-description">
+                {{product.description}}
+            </div>
+            <div class="product-price">
+                {{product.currency.symbol}}&nbsp;{{product.price}}
+
+            </div>
+            <div class="product-informations">
+                <div class="product-information">
+                    <div class="key">Brand</div>
+                    <div class="value">{{product.brand}}</div>
+                </div>
+                <div class="product-information">
+                    <div class="key">Condition</div>
+                    <div class="value">{{product.condition}}</div>
+                </div>
+                <div class="product-information">
+                    <div class="key">Size</div>
+                    <div class="value">{{product.size}}</div>
+                </div>
+            </div>
+            <ul class="product-actions">
+                <li>
+                    <button class="btn btn-sm btn-primary"><i class="icon-heart-empty"></i> Like</button>
+                </li>
+                <li>
+                    <button class="btn btn-sm btn-primary"><i class="icon-retweet"></i> Relist</button>
+                </li>                
+                <li>
+                    <button id="product-buy" class="btn btn-sm btn-primary"><i class="icon-tag"></i> Want</button>
+                </li>
+            </ul>
+            <ul class="product-statistics">
+                <li>{{product.likes}}&nbsp;&nbsp;Likes</li>
+                <li>{{product.relists}}&nbsp;&nbsp;Relists</li>
+                <li>{{product.comments}}&nbsp;&nbsp;Comments</li>
+            </ul>
+            {{#comments.length}}
+            <div class="comments">
+                {{#comments}}
+                <div class="comment">
+                    <div class="comment-image">
+                        <img src="{{user.imageUrl}}" />
+                    </div>
+                    <div class="comment-body">
+                        <strong>{{user.firstName}}&nbsp;{{user.lastName}}</strong> {{body}}
+                        <div class="comment-meta">{{date}}</div>
+                    </div>
+                </div>
+                {{/comments}}
+            </div>
+            {{/comments.length}} {{#currentUser}}
+            <div class="post-comment">
+                <textarea id="product-comment-textarea" placeholder="Leave a comment"></textarea>
+                <i class="icon-pencil"></i> 
+                <button id="product-comment-submit" class="btn btn-primary btn-sm">Send</button>
+            </div>
+            {{/currentUser}} {{^currentUser}}
+            <div class="callout-login">
+                <button class="btn btn-block btn-primary">Sign in to leave a comment</button>
+            </div>
+            {{/currentUser}}
+        </div>
+    </div>
+</div>

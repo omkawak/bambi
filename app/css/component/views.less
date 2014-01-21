@@ -1,0 +1,24 @@
+#views {
+    position: absolute;
+    top: 53px;
+    bottom: 49px;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; 
+    @media (min-width: @screen-sm-min) {
+        top: 73px;
+    }
+    .view {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        scroll: touch;
+    }
+    @media (min-width: @screen-sm-min) {
+        bottom: 0;
+    }    
+}

@@ -1,0 +1,53 @@
+<div class="intro">
+    <div class="intro-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="user-image">
+                        <img src="{{user.imageUrl}}" />
+                    </div>
+                    <div class="user-details">
+                        <div class="user-name">
+                            {{user.firstName}}&nbsp;{{user.lastName}}
+                        </div>
+                        <div class="user-location">
+                            <i class="icon-map-marker"></i> {{user.location}}
+                        </div>
+                        <div class="user-actions">
+                            <button id="user-follow-button" class="btn btn-sm btn-invert btn-wide"><i class="icon-plus"></i> Follow
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row user-statistics">
+                        <div class="col-xs-4 user-statistic">
+                            <div class="value">
+                                {{user.listings}}
+                            </div>
+                            <div class="key">
+                                Listings
+                            </div>
+                        </div>                   
+                        <div class="col-xs-4 user-statistic">
+                            <div class="value">
+                                {{user.followers}}
+                            </div>
+                            <div class="key">
+                                Followers
+                            </div>
+                        </div>
+                        <div class="col-xs-4 user-statistic">
+                            <div class="value">
+                                {{user.following}}
+                            </div>
+                            <div class="key">
+                                Following
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

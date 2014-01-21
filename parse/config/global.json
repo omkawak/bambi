@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "_default": {
+            "link": "vidress"
+        }, 
+        "vidress": {
+            "applicationId": "9WfrCLnXRI3vik22yhRNZYcSbpQgZZXCzun67BxR", 
+            "masterKey": "1HGcAZ7Z1cCzW69NiSAUjhIXNtSUCTeydXRWi935"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.16"
+    }
+}

@@ -1,0 +1,91 @@
+[data-listings] {
+    .listings {
+        position: relative;
+    }
+    .product {
+        background: #FFF;
+        border-radius: 3px;
+        .product-image {
+            overflow: hidden;
+            img {
+                width: 100%;
+                display: block;
+            }
+            a {
+                position: relative;
+                display: block;
+            }
+        }
+    }
+    .product-image-overlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .1);
+    }
+    .product-details {
+        padding: 5px 5px 0;
+    }
+    .product-description {
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .product-price {
+        color: #16a085;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .product-user {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0 5px 8px;
+        font-size: 12px;
+        line-height: 1.2;
+        .user-image {
+            float: left;
+            img {
+                height: 28px;
+                width: 28px;
+                border-radius: 14px;
+            }
+        }
+        .user-name {
+            font-weight: 600;
+        }
+        .user-location {
+            color: @colorGrey;
+            font-size: 11px !important;
+        }
+        .user-details {
+            padding-left: 39px;
+        }
+    }
+    .listing-relist-alert {
+        display: none;
+        padding: 0 5px 5px;
+        color: @colorGrey;
+        font-size: 12px;
+        padding-left: 39px;
+        padding-right: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .listing-relist {
+        .listing-relist-alert {
+            display: block;
+        }
+    }
+    @media (max-width: @screen-xs-max) {
+        font-size: 12px;
+    }
+}

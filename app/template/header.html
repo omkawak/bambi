@@ -1,0 +1,90 @@
+<div class="header">
+    <div class="container">
+        <a href="/shop" class="logo">
+            <i class="icon-pinterest"></i>
+        </a>
+        <p id="header-browse-btn" class="navigation-item-browse navigation-item">
+            Discover <i class="icon-angle-down"></i>
+        </p>
+        <nav class="header-navigation">
+            <ul class="navigation-list">
+                <li class="navigation-item">
+                    <i class="icon-search"></i>
+                </li>
+                <li id="header-user-btn" class="navigation-item">
+                    {{#isLoggedIn}}
+                    <i class="icon-male-alt"></i>
+                    {{/isLoggedIn}} {{^isLoggedIn}}
+                    <i class="icon-signin"></i>
+                    {{/isLoggedIn}}
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="navigation-flyout navigation-flyout-categories">
+    <div class="container">
+        <div class="flyout">
+            <ul>
+                <li>
+                    <a href="/discover">All</a>
+                </li>
+                <li>
+                    <i class="icon-glasses"></i> 
+                    <a href="/discover/accesories">Accessories</a>
+                </li>
+                <li>
+                    <i class="icon-picture"></i> 
+                    <a href="/discover/art-and-design">Art &amp; Design</a>
+                </li>
+                <li>
+                    <i class="icon-tags"></i> 
+                    <a href="/discover/fashion">Fashion</a>
+                </li>
+                <li>
+                    <i class="icon-female"></i> 
+                    <a href="/discover/health-and-beauty">Health &amp; Beauty</a>
+                </li>
+                <li>
+                    <i class="icon-tablet"></i> 
+                    <a href="/discover/tech">Tech</a>
+                </li>
+                <li>
+                    <i class="icon-plus"></i> 
+                    <a href="/discover/more">More</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{#isLoggedIn}}
+<div class="navigation-flyout navigation-flyout-user">
+    <div class="container">
+        <div class="flyout">
+            {{#currentUser}}
+            <a href="/u/{{id}}">
+                <div class="user">
+                    <div class="user-image">
+                        <img src="{{imageUrl}}" />
+                    </div>
+                    <div class="user-details">
+                        <div class="user-name">{{firstName}} {{lastName}}</div>
+                        <div class="user-location">{{location}}</div>
+                    </div>
+                </div>
+            </a>
+            {{/currentUser}}
+            <ul>
+                <li>
+                    <i class="icon-cog"></i> 
+                    <a href="/settings">Settings</a>
+                </li>
+                <li>
+                    <i class="icon-signout"></i> 
+                    <a href="/logout">Sign out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{/isLoggedIn}}

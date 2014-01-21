@@ -1,0 +1,142 @@
+#messages {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    & > .container {
+        position: relative;
+        padding: 0;
+        height: 100%;
+    }
+    .conversations {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 320px;
+        border-left: 1px solid rgba(0, 0, 0, .1);
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                padding: 10px 15px;
+                margin: 0;
+                border-bottom: 1px solid rgba(0, 0, 0, .1);
+                &:after {
+                    content:"";
+                    display: table;
+                    clear: both;
+                }
+            }
+        }
+        h2 {
+            padding: 0;
+            margin: 0;
+            height: 44px;
+            line-height: 44px;
+            font-size: 16px;
+            padding: 0 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+        }
+        .conversation-image {
+            float: left;
+            img {
+                height: 44px;
+                width: 44px;
+                border-radius: 22px;
+            }
+        }
+        .conversation-last-message {
+            color: @colorGrey;
+            font-size: 13px;
+            .truncate;
+        }
+        .conversation-details {
+            padding-left: 59px;
+            padding-top: 1px;
+        }
+        .conversation-user {
+            font-weight: 600;
+            .truncate;
+        }
+        @media (max-width: @screen-xs-max) {
+            border: none;
+            width: 100%;
+            ul {
+                li {
+                    padding: 0 0 0 15px;
+                    border: none;
+                }
+            }
+            .conversation-details {
+                padding: 0;
+                border-bottom: 1px solid rgba(0, 0, 0, .1);
+                margin-left: 59px;
+                padding: 6px 0 7px;
+            }
+            .conversation-image {
+                padding: 5px 0;
+            }
+        }
+    }
+    .conversation {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 320px;
+        right: 0;
+        border-left: 1px solid rgba(0, 0, 0, .1);
+        border-right: 1px solid rgba(0, 0, 0, .1);
+        @media (max-width: @screen-xs-max) {
+            border: none;
+            width: 100%;
+            display: none;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                padding: 15px;
+                border-bottom: 1px solid rgba(0, 0, 0, .1);
+            }
+        }
+        .message-user {
+            &:after {
+                content:"";
+                display: table;
+                clear: both;
+            }
+            margin-bottom: 10px;
+        }
+        .user-name {
+            font-weight: bold;
+        }
+        .user-location {
+            color: @colorGrey;
+        }
+        .user-details {
+            padding-left: 59px;
+        }
+        .product-snippet {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .user-image {
+            height: 44px;
+            width: 44px;
+            float: left;
+            img {
+                height: 44px;
+                width: 44px;
+                border-radius: 22px;
+            }
+        }
+        .message-date {
+            margin-top: 10px;
+            font-size: 12px;
+            color: @colorGrey;
+        }
+    }
+}

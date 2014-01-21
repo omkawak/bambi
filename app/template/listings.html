@@ -1,0 +1,48 @@
+{{#listings.length}}
+<div class="listings">
+    {{#listings}} {{>listing}} {{/listings}}
+</div>
+{{/listings.length}}
+{{^listings.length}}
+{{#discoverType}}
+<div class="void">
+    <p class="icon"><i class="icon-compass fa fa-spin"></i></p>
+    <h3>Where are you?</h3>
+    <p>Please enter your city to discover beautiful clothes for sale in your area.</p>
+    <p><input placeholder="Enter your city" /></p>
+    <button class="btn btn-primary"><i class="icon-ok"></i> Continue</button>
+</div>
+{{/discoverType}}
+{{/listings.length}}
+
+<!-- {{>listing}} -->
+<div class="listing listing-{{type}}">
+    <div class="listing-relist-alert">
+        <i class="icon-retweet"></i> Relisted by <strong><a href="/u/{{user.id}}">{{user.firstName}}&nbsp;{{user.lastName}}</a></strong>
+    </div>
+    <div class="product">
+        <a href="/u/{{product.user.id}}">
+            <div class="product-user">
+                <div class="user-image">
+                    <img src="{{product.user.imageUrl}}" />
+                </div>
+                <div class="user-details">
+                    <div class="user-name">{{product.user.firstName}}&nbsp;{{product.user.lastName}}</div>
+                    <div class="user-location">{{product.user.location}}</div>
+                </div>
+            </div>
+        </a>
+        <div class="product-image">
+            <a href="/p/{{product.id}}">
+                <div class="product-image-overlay">
+                </div>
+                <img src="{{product.imageUrl}}" />
+            </a>
+        </div>
+        <div class="product-details">
+            <div class="product-description">{{product.description}}</div>
+            <div class="product-price">{{product.currency.symbol}}&nbsp;{{product.price}}</div>
+        </div>
+    </div>
+</div>
+<!-- {{/listing}} -->

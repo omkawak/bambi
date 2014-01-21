@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bambi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <link rel="stylesheet/less" type="text/css" href="/css/main.less" />
+
+    <script src="/bower_components/less/dist/less-1.5.1.min.js" type="text/javascript"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.16.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            Parse.FacebookUtils.init({
+                appId: '220936314740402', // Facebook App ID
+                channelUrl: '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+                cookie: true, // enable cookies to allow Parse to access the session
+                xfbml: true // parse XFBML
+            });
+        };
+        (function() {
+            if (document.getElementById('facebook-jssdk')) {
+                return;
+            }
+            var firstScriptElement = document.getElementsByTagName('script')[0];
+            var facebookJS = document.createElement('script');
+            facebookJS.id = 'facebook-jssdk';
+            facebookJS.src = '//connect.facebook.net/en_US/all.js';
+            firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
+        }());
+    </script>
+
+    <header>
+    </header>
+
+    <div id="splash">
+        <div class="splash-loading">
+            <i class="icon-align-right fa fa-spin"></i>
+        </div>
+        <div class="splash-content">
+                <h1 class="typo-logo">Bambi</h1>
+                <p>Sell and buy beautiful clothes<br /> at prices you can afford.</p>
+                <ul>
+                    <li><button id="splash-button-login" class="btn btn-lg btn-block btn-default facebook">Sign in with Facebook</button></li>
+                </ul>
+                <p class="disclaimer">By tapping "Sign in with Facebook" you are indicating that you have read and agree to the <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a>.</p>
+            </div>
+    </div>
+    
+    <div data-window id="window-buy">
+    </div>
+
+    <div data-window id="window-upload">
+    </div>
+
+    <div id="overlay">
+    </div>
+
+    <div data-modal>
+        <div id="sell" data-upload class="md">
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+
+    <div id="views" class="viewport">
+
+        <div id="messagesView" class="view">
+            <div id="messages">
+            </div>
+        </div>
+
+        <div id="shopView" class="view">
+            <div class="container">
+                <div data-listings data-listings-type="timeline">
+                </div>
+            </div>
+        </div>
+
+        <div id="userView" class="view">
+            <div id="user">
+            </div>
+            <div class="container">
+                <div data-listings data-listings-type="user">
+                </div>
+            </div>
+        </div>
+
+        <div id="discoverView" class="view">
+            <div class="container">
+                <div data-listings data-listings-type="discover">
+                </div>
+            </div>        
+        </div>
+
+        <div id="product" class="view">
+        </div>
+
+        <div id="settings" class="view">
+        </div>
+
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="/"><i class="icon-home"></i></a></li>
+            <li><a href="/discover"><i class="icon-compass"></i></a></li>
+            <li><a href="/sell"><i class="icon-plus"></i></a></li>
+            <li><a href="/notifications"><i class="icon-bell"></i></a></li>
+            <li><a href="/messages"><i class="icon-envelope"></i></a></li>
+        </ul>
+    </footer>
+
+    <!--[if lt IE 9]>
+    <script src="/bower_components/es5-shim/es5-shim.js"></script>
+    <script src="/bower_components/es5-shim/es5-sham.js"></script>
+    <![endif]-->
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/bower_components/wookmark-jquery/jquery.wookmark.js"></script>
+    <script src="/bower_components/jquery-autosize/jquery.autosize.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <script src="/bower_components/davis/davis.min.js"></script>
+
+    <script src="/bower_components/requirejs/require.js" data-main="/js/main.js"></script>
+
+    <!-- Parse -->
+    <script>
+        // Recursive .toJSON function
+        Parse.Object.prototype.toJSON = function() {
+            var json = _.clone(this.attributes);
+            for (var attr in json) {
+                if ((json[attr] instanceof Parse.Object) || (json[attr] instanceof Parse.Collection)) {
+                    json[attr] = json[attr].toJSON();
+                }
+            }
+            json.id = this.id;
+            return json;
+        };
+
+        Parse.initialize("9WfrCLnXRI3vik22yhRNZYcSbpQgZZXCzun67BxR", "KGTJqrcNreRwN1AbZqQ08pTrN3fAS3RrSUuCwsX2");
+    </script>
+
+    <!-- Google Analytics -->
+    <script>
+        (function(b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function() {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', '');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+
+</html>
