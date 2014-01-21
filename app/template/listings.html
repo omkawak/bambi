@@ -2,23 +2,25 @@
 <div class="listings">
     {{#listings}} {{>listing}} {{/listings}}
 </div>
-{{/listings.length}}
-{{^listings.length}}
-{{#discoverType}}
+{{/listings.length}} {{^listings.length}} {{#discoverType}}
 <div class="void">
-    <p class="icon"><i class="icon-compass fa fa-spin"></i></p>
-    <h3>Where are you?</h3>
-    <p>Please enter your city to discover beautiful clothes for sale in your area.</p>
-    <p><input placeholder="Enter your city" /></p>
-    <button class="btn btn-primary"><i class="icon-ok"></i> Continue</button>
+    <div class="void-content">
+        <h3>Where are you?</h3>
+        <p>Please enter your city to discover beautiful clothes for sale in your area.</p>
+        <p>
+            <input placeholder="Enter your city" />
+        </p>
+        <button class="btn btn-primary"><i class="icon-ok"></i> Continue</button>
+    </div>
 </div>
-{{/discoverType}}
-{{/listings.length}}
+{{/discoverType}} {{/listings.length}}
 
 <!-- {{>listing}} -->
 <div class="listing listing-{{type}}">
     <div class="listing-relist-alert">
-        <i class="icon-retweet"></i> Relisted by <strong><a href="/u/{{user.id}}">{{user.firstName}}&nbsp;{{user.lastName}}</a></strong>
+        <i class="icon-retweet"></i> Relisted by
+        <strong><a href="/u/{{user.id}}">{{user.firstName}}&nbsp;{{user.lastName}}</a>
+        </strong>
     </div>
     <div class="product">
         <a href="/u/{{product.user.id}}">
