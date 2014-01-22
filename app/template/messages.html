@@ -1,4 +1,13 @@
 <div class="container">
+    {{^conversations.length}}}
+    <div class="void">
+        <div class="void-content">
+            <h3><i class="icon-envelope"></i></h3>
+            <p>You don't have any messages.</p>
+        </div>
+    </div>
+    {{/conversations.length}}}
+    {{#conversations.length}}}
     <div class="conversations">
         <h2>Messages</h2>
         <ul>
@@ -58,4 +67,5 @@
             {{/conversation}}
         </ul>
     </div>
+    {{/conversations.length}}
 </div>
